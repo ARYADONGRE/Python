@@ -1,0 +1,27 @@
+email = input("Enter your email : ")
+j = 0
+# donathegreat45@gmail.com
+if len(email) >= 6:
+  if email[0].isalpha():
+    if ('@' in email) and (email.count("@") == 1):
+      if (email[-4] == ".") ^ (
+          email[-3] == "."):  #^ has a reason as if or 3 ,4 both can be .
+        if email.count(" ") == 0:
+          for i in email:
+            if i.isalpha():
+              if i == i.upper():
+                j = 1
+                print("Wrong email Capital letter")
+                break
+          if j != 1:
+            print("Email Passed the Conditions")
+        else:
+          print("Wrong email Space in between")
+      else:
+        print("Wrong email dot not right")
+    else:
+      print("Wrong email no @ or >1 @")
+  else:
+    print("Wrong email start by char")
+else:
+  print("Wrong email char<6 ")
